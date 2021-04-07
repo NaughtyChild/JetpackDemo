@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.naughtychild.jetpack.navigation.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+        <argument
+            android:name="user_name"
+            android:defaultValue="unknown"
+            app:argType="string" />
+        <argument
+            android:name="user_age"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.naughtychild.jetpack.navigation.fragment.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+</navigation>
