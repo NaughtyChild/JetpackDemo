@@ -10,15 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackApplication">
-        <activity android:name=".navigation.fragment.FragmentActivity">
+        <activity android:name=".viewmodel.livedata.LiveDataActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".navigation.ui.UIActivity">
+        <activity android:name=".viewmodel.ViewModelActivity">
 
         </activity>
+        <activity android:name=".navigation.fragment.FragmentActivity"></activity>
+        <activity android:name=".navigation.ui.UIActivity" />
         <activity android:name=".lifecycle.MainActivity" />
     </application>
 </manifest>
