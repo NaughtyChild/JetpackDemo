@@ -1,5 +1,6 @@
 package com.naughtychild.jetpack.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
@@ -15,6 +16,10 @@ interface StudentDao {
 
     @Query("select * from Student")
     fun getStudent(): List<Student>
+
+
+    @Query("select * from Student")
+    fun getStudentLiveData():LiveData<List<Student>>
 
     @Query("select * from Student where id=:id")
     fun getStudentById(id: Int): Student
