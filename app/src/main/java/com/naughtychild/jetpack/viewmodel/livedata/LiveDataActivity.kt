@@ -9,6 +9,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.naughtychild.jetpack.R
 
+/**
+ * ViewModel 的优势之处就在于绑定寿命周期,可以便利的在activity和fragment之间传递数据,
+ * 一般数据有livedata 来进行持有
+ */
 class LiveDataActivity : AppCompatActivity() {
     private lateinit var textView: TextView
     lateinit var button: Button
@@ -31,11 +35,13 @@ class LiveDataActivity : AppCompatActivity() {
         startButton = findViewById(R.id.button4)
         transformButton = findViewById(R.id.button5)
         countNumTv = findViewById(R.id.countNumTv)
+        val liveData = timerLiveDataModel.getCurrentData()
 
         button6 = findViewById(R.id.button6)
         button6.setOnClickListener {
             countNumViewModel.senMessage()
         }
+
         countNumViewModel.liveCombind.observe(this) {
             countNumTv.text = it
         }
@@ -47,7 +53,6 @@ class LiveDataActivity : AppCompatActivity() {
         transformButton.setOnClickListener {
             typeModel.sendData()
         }
-        val liveData = timerLiveDataModel.getCurrentData()
         liveData.observe(this) {
             runOnUiThread {
                 textView.text = "time =$it"
