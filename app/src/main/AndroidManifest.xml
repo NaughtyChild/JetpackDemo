@@ -10,6 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackApplication">
+        <activity android:name=".viewmodel.flow.FlowActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".databinding.BindingActivity">
 
         </activity>
@@ -18,11 +24,8 @@
         </activity>
         <activity android:name=".room.UnionActivity"></activity>
         <activity android:name=".room.RoomActivity"></activity>
-        <activity android:name=".viewmodel.livedata.LiveDataActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".viewmodel.livedata.LiveDataActivity">
+
         </activity>
         <activity android:name=".viewmodel.ViewModelActivity" />
         <activity android:name=".navigation.fragment.FragmentActivity" />
