@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.*
 import com.naughtychild.jetpack.R
 import com.naughtychild.jetpack.viewmodel.model.TimerModel
 import kotlinx.coroutines.flow.collect
@@ -28,8 +27,10 @@ class FlowActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launchWhenCreated {
-            flowModel.stateFlow.collect {
-                content.text = it.toString()
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                flowModel.stateFlow.collect {
+                    content.text = it.toString()
+                }
             }
         }
     }
