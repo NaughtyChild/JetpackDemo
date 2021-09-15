@@ -2,12 +2,17 @@ package com.naughtychild.jetpack.viewmodel.flow
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.*
 import com.naughtychild.jetpack.R
-import com.naughtychild.jetpack.viewmodel.model.TimerModel
+import com.naughtychild.jetpack.databinding.ActivityFlowBinding
+import com.naughtychild.jetpack.util.SpanBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
@@ -24,7 +29,8 @@ class FlowActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_flow)
+        var flowBinding = ActivityFlowBinding.inflate(layoutInflater)
+        setContentView(flowBinding.root)
         val flowModel = ViewModelProvider(this).get(FlowViewModel::class.java)
 
         button.setOnClickListener {
@@ -38,6 +44,18 @@ class FlowActivity : AppCompatActivity() {
                 }
             }
         }
+        val testStr = "123456789"
+
+        var span = SpannableString(testStr)
+        //start 和end 的索引总是包左不包右
+        span.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.teal_200)),
+            4,
+            6, Spanned.SPAN_INCLUSIVE_EXCLUSIVE
+        )
+
+
+        flowBinding.textForSpan.setText(span)
     }
 
     val TAG = "FlowActivity"
@@ -65,4 +83,5 @@ class FlowActivity : AppCompatActivity() {
 
         }
     }
+
 }

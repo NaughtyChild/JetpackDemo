@@ -31,8 +31,8 @@
             android:id="@+id/bookAuthorTv"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:onClick="@{eventHandler.toast}"
             android:background="@color/design_default_color_primary"
+            android:onClick="@{eventHandler.toast}"
             android:text="@{book.author}" />
     </LinearLayout>
 </layout>

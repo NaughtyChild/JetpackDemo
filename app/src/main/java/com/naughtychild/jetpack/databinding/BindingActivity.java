@@ -18,7 +18,6 @@ public class BindingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityBindingBindingImpl bindingBinding = DataBindingUtil.setContentView(this, R.layout.activity_binding);
-
         Book book = new Book("book_name", "author");
         EventHandler eventHandler = new EventHandler(this);
         bindingBinding.setBook(book);

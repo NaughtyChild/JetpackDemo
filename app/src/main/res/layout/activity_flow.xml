@@ -32,9 +32,16 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="test"
         android:onClick="testClick"
+        android:text="test"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/content" />
+
+    <TextView
+        android:id="@+id/textForSpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/content1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
