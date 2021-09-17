@@ -9,6 +9,7 @@ import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.PermissionChecker
 import androidx.lifecycle.*
 import com.naughtychild.jetpack.R
 import com.naughtychild.jetpack.databinding.ActivityFlowBinding
@@ -53,9 +54,6 @@ class FlowActivity : AppCompatActivity() {
             4,
             6, Spanned.SPAN_INCLUSIVE_EXCLUSIVE
         )
-
-
-        flowBinding.textForSpan.setText(span)
     }
 
     val TAG = "FlowActivity"

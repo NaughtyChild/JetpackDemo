@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/content" />
 
     <TextView
-        android:id="@+id/textForSpan"
+        android:id="@+id/test_for_span_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
